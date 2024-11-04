@@ -23,56 +23,81 @@
 
 <!-- Header -->
 <header class="w3-display-container w3-content w3-wide" style="max-width:1500px; background-color:#333";id="home">
-  <canvas id="particle-canvas"></canvas>
+  <div class="animated-shapes">
+    <div class="shape shape1"></div>
+    <div class="shape shape2"></div>
+    <div class="shape shape3"></div>
+    <div class="shape shape4"></div>
+  </div>
+
   <img class="w3-image" src="https://github.com/Srishti002/portfolio/blob/main/pexels-lum3n-44775-399161.jpg" alt="" width="1500" height="800">
   <div class="w3-display-middle w3-margin-top w3-center">
     <h1 class="w3-xxlarge w3-text-white"><span class="w3-padding w3-black w3-opacity-min"><b>Hi! I'm Srishti Singh</b></span> <span class="w3-hide-small w3-text-light-grey"></span></h1>
   </div>
-  <script>
-    // Particle animation code
-    const canvas = document.getElementById('particle-canvas');
-    const ctx = canvas.getContext('2d');
-
-    canvas.width = window.innerWidth;
-    canvas.height = 800;
-
-    const particles = [];
-
-    for (let i = 0; i < 100; i++) {
-      particles.push({
-        x: Math.random() * canvas.width,
-        y: Math.random() * canvas.height,
-        radius: Math.random() * 3 + 1,
-        speed: Math.random() * 2 + 1,
-        direction: Math.random() * Math.PI * 2
-      });
+  <style>
+    .animated-shapes {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
     }
 
-    function animate() {
-      requestAnimationFrame(animate);
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
+    .shape {
+      position: absolute;
+      background-color: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      animation: shapeAnimation 10s linear infinite;
+    }
 
-      for (let i = 0; i < particles.length; i++) {
-        const particle = particles[i];
-        particle.x += Math.cos(particle.direction) * particle.speed;
-        particle.y += Math.sin(particle.direction) * particle.speed;
+    .shape1 {
+      width: 50px;
+      height: 50px;
+      top: 20%;
+      left: 10%;
+      animation-delay: 0s;
+    }
 
-        if (particle.x < 0 || particle.x > canvas.width) {
-          particle.direction = Math.PI - particle.direction;
-        }
-        if (particle.y < 0 || particle.y > canvas.height) {
-          particle.direction = -particle.direction;
-        }
+    .shape2 {
+      width: 30px;
+      height: 30px;
+      top: 45%;
+      left: 70%;
+      animation-delay: 2s;
+    }
 
-        ctx.beginPath();
-        ctx.arc(particle.x, particle.y, particle.radius, 0, Math.PI * 2);
-        ctx.fillStyle = '#fff';
-        ctx.fill();
+    .shape3 {
+      width: 20px;
+      height: 20px;
+      top: 80%;
+      left: 50%;
+      animation-delay: 4s;
+    }
+
+    .shape4 {
+      width: 40px;
+      height: 40px;
+      top: 60%;
+      left: 20%;
+      animation-delay: 6s;
+    }
+
+    @keyframes shapeAnimation {
+      0% {
+        transform: scale(1) translate(0, 0);
+        opacity: 1;
+      }
+      50% {
+        transform: scale(2) translate(50%, 50%);
+        opacity: 0.5;
+      }
+      100% {
+        transform: scale(1) translate(0, 0);
+        opacity: 1;
       }
     }
-
-    animate();
-  </script>
+  </style>
    
 </header>
 
