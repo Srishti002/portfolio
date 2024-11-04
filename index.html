@@ -5,6 +5,56 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<style>
+  /* Custom styles for navbar */
+  .w3-top {
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+  }
+
+  .custom-navbar {
+    background: linear-gradient(90deg, #2c3e50, #3498db);
+    padding: 15px 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+  }
+
+  .custom-navbar .w3-bar-item {
+    color: white !important;
+    padding: 8px 16px;
+    margin: 0 4px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+  }
+
+  .custom-navbar .w3-button:hover {
+    background-color: rgba(255, 255, 255, 0.1) !important;
+    transform: translateY(-2px);
+  }
+
+  .custom-navbar .brand-name {
+    font-size: 1.2rem;
+    letter-spacing: 0.5px;
+  }
+
+  .custom-navbar .brand-name b {
+    font-weight: 600;
+  }
+
+  /* Responsive adjustments */
+  @media (max-width: 600px) {
+    .custom-navbar {
+      padding: 10px;
+    }
+    
+    .custom-navbar .w3-bar-item {
+      padding: 6px 12px;
+      margin: 0 2px;
+    }
+  }
+</style>
+  
 </head>
 <body>
 
